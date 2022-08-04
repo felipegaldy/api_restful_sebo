@@ -60,7 +60,8 @@ public class Usuario {
 			String usuario,
 			String senha,
 			String foto, 
-			LocalDate dataNascimento,
+			LocalDate dataNascimento
+			)
 			 {
 		this.id = id;
 		this.nome = nome;
