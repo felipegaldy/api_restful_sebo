@@ -130,4 +130,11 @@ public class Usuario {
 		this.dataNascimento = dataNascimento;
 	}
 
+	@Override
+	public String toString() {
+		return "" + dataNascimento;
+	}
+	
+	
+
 }
