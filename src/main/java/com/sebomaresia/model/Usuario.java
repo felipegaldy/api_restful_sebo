@@ -22,38 +22,56 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table(name = "tb_usuarios")
 public class Usuario {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@NotBlank(message = "O atributo Nome é obrigatório.")
 	private String nome;
-	
+
 	@NotBlank(message = "O atributo usuario é obrigatório.")
 	@Email(message = "O atributo usuario deve ser um email válido")
 	private String usuario;
-	
+
 	@NotBlank(message = "O atributo senha é obrigatório.")
 	@Size(min = 8, message = " A senha deve ter no mínimo 8 caracteres")
 	private String senha;
-	
+
 	private String foto;
-	
+
 	/**
-	 *  A anotação @Column indica o nome que o atributo terá no Banco de dados
-	 *  A anotação @JsonFormat formata a data para o mesmo padrão do MySQL
+	 * A anotação @Column indica o nome que o atributo terá no Banco de dados A
+	 * anotação @JsonFormat formata a data para o mesmo padrão do MySQL
 	 */
 	@Column(name = "data_nascimento")
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	@NotNull(message = "O atributo data de nascimento é obrigatório.")
 	private LocalDate dataNascimento;
-	
+
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
 	private List<Produto> produto;
+
 	
 	
+	public Usuario(Long id, 
+			String nome,
+			String usuario,
+			String senha,
+			String foto, 
+			LocalDate dataNascimento,
+			 {
+		this.id = id;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+		this.foto = foto;
+		this.dataNascimento = dataNascimento;
+
+	}
+
+	public Usuario() {};
 
 	public List<Produto> getProduto() {
 		return produto;
@@ -110,8 +128,5 @@ public class Usuario {
 	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-	
-	
-	
-	
+
 }
