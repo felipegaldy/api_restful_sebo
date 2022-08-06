@@ -10,7 +10,7 @@
 </p>
 
 <h4 align="center"> 
-	 Status: 🚀 Carregando...
+	 Status: 🚀 Concluido.
 </h4>
 
 ### Etapas
@@ -24,10 +24,10 @@
 - [x] Testes no Postman
 - [x] Criar classe usuário e adicionar dependencias de segurança com Spring Security
 - [x] Configurar camadas de segurança  e adicionar metodos para a classe usuário
-- [ ] Testes unitários com JUnit 
-- [ ] Configurar Swagger
-- [ ] Configurar application propperties para deploy na nuvem
-- [ ] Realizar deploy no Heroku
+- [x] Testes unitários com JUnit 
+- [x] Configurar Swagger
+- [x] Configurar application propperties para deploy na nuvem
+- [x] Realizar deploy no Heroku
 
 ###  Funcionalidades
 
